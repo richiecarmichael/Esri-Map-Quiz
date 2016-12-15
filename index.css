@@ -1,0 +1,391 @@
+﻿html, body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Avenir LT W01 35 Light', Arial, Helvetica, sans-serif;
+}
+
+#banner-welcome,
+#banner-top,
+#banner-bottom,
+#banner-answer,
+#banner-highscore,
+#button-group-disconnected,
+#button-group-connected,
+#timer {
+    display: none;
+}
+
+#map {
+    pointer-events: none;
+}
+
+.rc-full {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    bottom: 0em;
+    right: 0em;
+}
+
+.rc-disable {
+    pointer-events: none;
+}
+
+#banner-welcome {
+    position: absolute;
+    top: 50%;
+    left: 0em;
+    right: 0em;
+    height: 12em;
+    margin-top: -6em;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#banner-top {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    right: 0em;
+    height: 3em;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#banner-highscore {
+    position: absolute;
+    top: 3em;
+    left: 0em;
+    right: 0em;
+    bottom: 0em;
+}
+
+#banner-highscore-left-title {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    pointer-events: none;
+    margin-bottom: 0.5em;
+}
+
+#banner-highscore-left {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    bottom: 0em;
+    width: 10em;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1em 1em 1em 1em ;
+}
+
+#banner-highscore-right {
+    position: absolute;
+    top: 0em;
+    left: 10em;
+    bottom: 0em;
+    right: 0em;
+    overflow-y: auto;
+}
+
+#banner-highscore-left-when,
+#banner-highscore-left-who {
+    color: white;
+    font-size: 1em;
+    text-align: left;
+    pointer-events: none;
+    margin-top: 1em;
+}
+
+#button-highscore-tohome,
+#banner-highscore-left-when-toggles > label,
+#banner-highscore-left-who-toggles > label {
+    display: block;
+    width: 7em;
+}
+
+.btn {
+    border-radius:  0px 0px; 
+    /*border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;*/
+}
+
+#banner-bottom {
+    position: absolute;
+    bottom: 0em;
+    left: 0em;
+    right: 0em;
+    height: 6em;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#banner-answer {
+    position: absolute;
+    top: 50%;
+    left: 0em;
+    right: 0em;
+    height: 15em;
+    margin-top: -7.5em;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#banner-answer-left {
+    position:absolute;
+    top:0em;
+    left:1em;
+    width:15em;
+    bottom: 3.5em;
+}
+
+#banner-answer-right {
+    position:absolute;
+    top:0em;
+    left:16em;
+    right:0em;
+    bottom: 3.5em;
+}
+
+#banner-answer-left-title,
+#banner-answer-right-title {
+    color: white;
+    font-size: 2em;
+    text-align: left;
+    pointer-events: none;
+}
+
+#banner-answer-right-value {
+    color: white;
+    font-size: 1em;
+    position: absolute;
+    left: 0em;
+    right: 0em;
+    top: 3em;
+    bottom: 1.5em;
+    overflow-y: auto;
+}
+
+#banner-answer-right-credit {
+    position: absolute;
+    left: 0em;
+    bottom: 0em;
+    color: white;
+    font-size: 1em;
+}
+
+#banner-answer-left-question-label,
+#banner-answer-left-answer-label,
+#banner-answer-left-bonus-label,
+#banner-answer-left-total-label {
+    color: white;
+    font-size: 1em;
+    display: inline-block;
+    width: 5.5em;
+    text-align: left;
+}
+
+#banner-answer-left-question-value,
+#banner-answer-left-answer-value,
+#banner-answer-left-bonus-value,
+#banner-answer-left-total-value {
+    color: white;
+    font-family: 'AvenirNextLTW01-Heavy';
+    font-size: 1.2em;  
+    display: inline-block;
+    width: 3.5em;
+    text-align: right;
+}
+
+#fb-name {
+    position: absolute;
+    top: 0.25em;
+    right: 3.25em;
+    color: white;
+    font-size: 1em;
+    pointer-events: none;
+}
+
+#fb-picture {
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+    height: 2.5em;
+    width: 2.5em;
+    background-size: 2.5em 2.5em;
+    background-repeat: no-repeat;
+}
+
+#title {
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 0.5em;
+    pointer-events: none;
+}
+
+#description {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    pointer-events: none;
+}
+
+#button-group-disconnected {
+    position:absolute;
+    left: 50%;
+    margin-left: -5em;
+    margin-top: 1em;
+}
+
+#button-group-connected {
+    position:absolute;
+    left: 50%;
+    margin-left: -8em;
+    margin-top: 1em;
+}
+
+#question {
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    right: 1em;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+#answers {
+    position: absolute;
+    top: 3em;
+    left: 1em;
+    right: 1em;
+    text-align: center;
+}
+
+#banner-answer-next,
+#banner-answer-home {
+    position: absolute;
+    bottom: 0.7em;
+    left: 1em;
+    right: 1em;
+    text-align: center;
+}
+
+.rc-banner-container {
+    display: inline-block;
+    pointer-events: none;
+    color: white;
+    margin-left: 1em;
+}
+
+.rc-banner-label {
+    font-size: 1em;
+}
+
+.rc-banner-value {
+    font-family: 'AvenirNextLTW01-Heavy';
+    font-size: 1.2em;   
+}
+
+#timer-background {
+    position: absolute;
+    left:0em;
+    right:0em;
+    top:0em;
+    height: 0.2em;
+    background-color: white;
+}
+
+#timer-sand {
+    position: absolute;
+    left:0em;
+    right:0em;
+    top:0em;
+    height: 0.2em;
+    background-color: red;
+}
+
+@-webkit-keyframes shift-right {
+  0% { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(100%); }
+}
+
+@-moz-keyframes shift-right {
+  0% { -moz-transform: translateX(0%); }
+  100% { -moz-transform: translateX(100%); }
+}
+
+@-o-keyframes shift-right {
+  0% { -o-transform: translateX(0%); }
+  100% { -o-transform: translateX(100%); }
+}
+
+@keyframes shift-right {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+.animated.shift-right {
+	-webkit-animation-name: shift-right;
+	-moz-animation-name: shift-right;
+	-o-animation-name: shift-right;
+	animation-name: shift-right;
+}
+
+@-webkit-keyframes glow-red {
+  0% { color: white; }
+  10% { color: red; }
+  100% { color: white; }
+}
+
+@-moz-keyframes glow-red {
+  0% { color: white; }
+  20% { color: red; }
+  100% { color: white; }
+}
+
+@-o-keyframes glow-red {
+  0% { color: white; }
+  20% { color: red; }
+  100% { color: white; }
+}
+
+@keyframes glow-red {
+  0% { color: white; }
+  20% { color: red; }
+  100% { color: white; }
+}
+
+.animated.glow-red {
+	-webkit-animation-name: glow-red;
+	-moz-animation-name: glow-red;
+	-o-animation-name: glow-red;
+	animation-name: glow-red;
+}
+
+@-webkit-keyframes grow {
+  0% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1.1); }
+}
+
+@-moz-keyframes grow {
+  0% { -moz-transform: scale(1); }
+  100% { -moz-transform: scale(1.1); }
+}
+
+@-o-keyframes grow {
+  0% { -o-transform: scale(1); }
+  100% { -o-transform: scale(1.1); }
+}
+
+@keyframes grow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animated.grow {
+	-webkit-animation-name: grow;
+	-moz-animation-name: grow;
+	-o-animation-name: grow;
+	animation-name: grow;
+}

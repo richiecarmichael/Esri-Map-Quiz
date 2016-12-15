@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <title>MapQuiz</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no'>
+    <meta name='author' content='Applications Prototype Lab' />
+    <meta name='Keywords' content='Esri, Environmental Systems Research Institute, Geographic Information Systems, GIS, GIS Software, Mapping Software, GIS Mapping, GIS Maps, Map Software, Interactive Maps, Story Maps' />
+    <meta name='Description' content='Esri&#39;s GIS (geographic information systems) mapping software helps you understand and visualize data to make decisions based on the best information and analysis.' />
+    <link type='image/ico' rel='shortcut icon' href='img/favicon.ico' />
+    <link type='image/ico' rel='icon' href='img/favicon.ico' />
+    <link href='img/apple-touch-icon.png' rel='apple-touch-icon' />
+    <link type='text/css' rel='stylesheet' href='css/bootstrap.min.css' />
+    <link type='text/css' rel='stylesheet' href='css/animate-animo.css' />
+    <link type='text/css' rel='stylesheet' href='//fast.fonts.com/cssapi/23855eec-5fdf-4594-9898-0113a04bfef0.css' />
+    <link type='text/css' rel='stylesheet' href='//js.arcgis.com/3.11/esri/css/esri.css'>
+    <link type='text/css' rel='stylesheet' href='index.css'>
+    <script type='text/javascript' src='//js.arcgis.com/3.11compact/'></script>
+    <script type='text/javascript' src='js/jquery-2.1.1.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='js/animo.js'></script>
+    <script type='text/javascript' src='index.js'></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-10866840-10', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <div id='map' class='rc-full rc-disable'></div>
+    <div id='banner-welcome'>
+        <div id="title">Welcome to MapQuiz by Esri</div>
+        <div id="description">The game that tests your geographic literacy</div>
+        <div id='button-group-disconnected' class="btn-group">
+            <button id='button-login' type="button" class="btn btn-primary">Log In</button>
+            <button id='button-highscores1' type='button' class='btn btn-primary'>High Scores</button>
+        </div>
+        <div id='button-group-connected' class="btn-group">
+            <button id='button-play' type='button' class='btn btn-primary'>Play</button>
+            <button id='button-highscores2' type='button' class='btn btn-primary'>High Scores</button>
+            <button id='button-logout' type='button' class='btn btn-primary'>Log Out</button>
+        </div>
+    </div>
+    <div id='banner-top'>
+        <div class='rc-banner-container'>
+            <div class='rc-banner-label'>Your Score</div>
+            <div class='rc-banner-value' id='banner-top-high-score'>0pt</div>
+        </div>
+        <div class='rc-banner-container'>
+            <div class='rc-banner-label'>High Score</div>
+            <div class='rc-banner-value' id='banner-top-high'></div>
+        </div>
+        <div class='rc-banner-container'>
+            <div class='rc-banner-label'>Ranking</div>
+            <div class='rc-banner-value' id='banner-top-rank'></div>
+        </div>
+        <div class='rc-banner-container'>
+            <div class='rc-banner-label'>Lifetime</div>
+            <div class='rc-banner-value' id='banner-top-life'></div>
+        </div>
+        <div id='fb-name'></div>
+        <div id='fb-picture'></div>
+    </div>
+    <div id='banner-bottom'>
+        <div id='timer-background'></div>
+        <div id='timer-sand'></div>
+        <div id='question'></div>
+        <div id='answers'>
+            <button id='button-answer1' type='button' class='btn btn-primary'></button>
+            <button id='button-answer2' type='button' class='btn btn-primary'></button>
+            <button id='button-answer3' type='button' class='btn btn-primary'></button>
+            <button id='button-answer4' type='button' class='btn btn-primary'></button>
+        </div>
+    </div>
+    <div id='banner-answer'>
+        <div id='banner-answer-left'>
+            <div id='banner-answer-left-title'>Score</div>
+            <div id='banner-answer-left-question'>
+                <div id='banner-answer-left-question-label'>Progress</div>
+                <div id='banner-answer-left-question-value'></div>
+            </div>
+            <div id='banner-answer-left-answer'>
+                <div id='banner-answer-left-answer-label'>Award</div>
+                <div id='banner-answer-left-answer-value'></div>
+            </div>
+            <div id='banner-answer-left-bonus'>
+                <div id='banner-answer-left-bonus-label'>Time Bonus</div>
+                <div id='banner-answer-left-bonus-value'></div>
+            </div>
+            <div id='banner-answer-left-total'>
+                <div id='banner-answer-left-total-label'>Total</div>
+                <div id='banner-answer-left-total-value'></div>
+            </div>
+        </div>
+        <div id='banner-answer-right'>
+            <div id='banner-answer-right-title'></div>
+            <div id='banner-answer-right-value'></div>
+            <div id='banner-answer-right-credit'>
+                <a id='banner-answer-right-wiki' href='http://www.wikipedia.org' target='_blank'>wikipedia</a>
+            </div>
+        </div>
+        <div id='banner-answer-next'>
+            <button id='button-next' type='button' class='btn btn-primary'>Next</button>
+        </div>
+        <div id='banner-answer-home'>
+            <button id='button-home' type='button' class='btn btn-primary'>Home</button>
+            <button id='button-newgame' type='button' class='btn btn-primary'>New Game</button>
+        </div>
+    </div>
+    <div id='banner-highscore'>
+        <div id='banner-highscore-left'>
+            <div id='banner-highscore-left-title'>High Scores</div>
+            <button id='button-highscore-tohome' type='button' class='btn btn-primary'>
+                <!--<span class="glyphicon glyphicon-chevron-left"></span> Back-->
+                &lt; Back
+            </button>
+            <div id='banner-highscore-left-when'>When</div>
+            <div id='banner-highscore-left-when-toggles' data-toggle='buttons'>
+                <label class='btn btn-primary'>
+                    <input type='radio' name='when' id='button-when-today'> Today
+                </label>
+                <label class='btn btn-primary'>
+                    <input type='radio' name='when' id='button-when-month'> This Month
+                </label>
+                <label class='btn btn-primary'>
+                    <input type='radio' name='when' id='button-when-year'> This Year
+                </label>
+                <label class='btn btn-primary active'>
+                    <input type='radio' name='when' id='button-when-all' checked> All Time
+                </label>
+            </div>
+            <div id='banner-highscore-left-who'>Who</div>
+            <div id='banner-highscore-left-who-toggles' data-toggle='buttons'>
+                <label class='btn btn-primary'>
+                    <input type='radio' name='who' id='button-who-me'> Just Me
+                </label>
+                <label class='btn btn-primary active'>
+                    <input type='radio' name='who' id='button-who-everyone' checked> Everyone
+                </label>
+            </div>
+        </div>
+        <div id='banner-highscore-right'></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+﻿html, body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Avenir LT W01 35 Light', Arial, Helvetica, sans-serif;
+}
+
+.rc-full {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    bottom: 0em;
+    right: 0em;
+}
+
+#banner {
+    position:absolute;
+    top:0em;
+    right:0em;
+    bottom:0em;
+    width: 20em;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1em 1em 1em 1em;
+    display: none;
+}
+
+#banner > input, #input > textarea{
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#box {
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#title-search {
+    font-size: 1.2em;
+    color: white;
+}
+
+#title {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    pointer-events: none;
+}
+
+#inputSearch {
+    margin-bottom: 1em;
+    border-radius: 0em;
+}
+
+#buttonAdd{
+    width:10em;
+    font-size: 1.5em;
+    border-radius: 0em;
+}
+
+#buttonGroup1 {
+    margin-top: 1.2em;
+}
+
+#buttonGroup2 {
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+}
+
+#buttonSave, #buttonClose, #buttonDelete {
+    width: 7em;
+    font-size: 1.1em;
+}
+
+.heading {
+    margin-top: 1em;
+    font-size: 1.2em;
+    color: white;
+}
+
+@-webkit-keyframes open-menu {
+  0% { -webkit-transform: translateX(20em); }
+  100% { -webkit-transform: translateX(0em); }
+}
+
+@-moz-keyframes open-menu {
+  0% { -moz-transform: translateX(20em); }
+  100% { -moz-transform: translateX(0em); }
+}
+
+@-o-keyframes open-menu {
+  0% { -o-transform: translateX(20em); }
+  100% { -o-transform: translateX(0em); }
+}
+
+@keyframes open-menu {
+  0% { transform: translateX(20em); }
+  100% { transform: translateX(0em); }
+}
+
+.animated.open-menu {
+	-webkit-animation-name: open-menu;
+	-moz-animation-name: open-menu;
+	-o-animation-name: open-menu;
+	animation-name: open-menu;
+}
+
+@-webkit-keyframes close-menu {
+  0% { -webkit-transform: translateX(0em); }
+  100% { -webkit-transform: translateX(20em); }
+}
+
+@-moz-keyframes close-menu {
+  0% { -moz-transform: translateX(0em); }
+  100% { -moz-transform: translateX(20em); }
+}
+
+@-o-keyframes close-menu {
+  0% { -o-transform: translateX(0em); }
+  100% { -o-transform: translateX(20em); }
+}
+
+@keyframes close-menu {
+  0% { transform: translateX(0em); }
+  100% { transform: translateX(20em); }
+}
+
+.animated.close-menu {
+	-webkit-animation-name: close-menu;
+	-moz-animation-name: close-menu;
+	-o-animation-name: close-menu;
+	animation-name: close-menu;
+}

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MapQuiz Editor</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no'>
+    <meta name='author' content='Applications Prototype Lab' />
+    <meta name='Keywords' content='Esri, Environmental Systems Research Institute, Geographic Information Systems, GIS, GIS Software, Mapping Software, GIS Mapping, GIS Maps, Map Software, Interactive Maps, Story Maps' />
+    <meta name='Description' content='Test your geographic literacy with this fun and interact game by Esri, leaders in mapping technology.' />
+    <link type='image/ico' rel='shortcut icon' href='img/favicon.ico' />
+    <link type='image/ico' rel='icon' href='img/favicon.ico' />
+    <link href='img/apple-touch-icon.png' rel='apple-touch-icon' />
+    <link type='text/css' rel='stylesheet' href='css/bootstrap.min.css' />
+    <link type='text/css' rel='stylesheet' href='//fast.fonts.com/cssapi/23855eec-5fdf-4594-9898-0113a04bfef0.css' />
+    <link type='text/css' rel='stylesheet' href='//js.arcgis.com/3.11/esri/css/esri.css'>
+    <link type='text/css' rel='stylesheet' href='editor.css'>
+    <script type='text/javascript' src='//js.arcgis.com/3.11compact/'></script>
+    <script type='text/javascript' src='js/jquery-2.1.1.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='js/animo.js'></script>
+    <script type='text/javascript' src='editor.js'></script>
+</head>
+<body>
+    <div id='map' class='rc-full'></div>
+    <div id='box'>
+        <div id='title-search'>Search</div>
+        <input id='inputSearch' type='text' class='form-control' placeholder='eg. Mount Fuji'>
+        <button id='buttonAdd' type='button' class='btn btn-primary'>New Quiz</button>
+    </div>
+    <div id='banner'>
+        <div id='title'>MapQuiz Editor</div>
+        <div class='heading'>Question</div>
+        <textarea id='inputQuestion' class='form-control' rows='2' placeholder='eg. What is the name of this city?'></textarea>
+        <div class='heading'>Answer</div>
+        <input id='inputAnswer' type='text' class='form-control' placeholder='eg. New York, New York'>
+        <div class='heading'>Incorrect Answer #1</div>
+        <input id='inputFake1' type='text' class='form-control' placeholder='eg. Atlantis'>
+        <div class='heading'>Incorrect Answer #2</div>
+        <input id='inputFake2' type='text' class='form-control' placeholder='eg. Shambhala'>
+        <div class='heading'>Incorrect Answer #3</div>
+        <input id='inputFake3' type='text' class='form-control' placeholder='eg. Lyonesse'>
+        <div class='heading'>Wikipedia Title</div>
+        <input id='inputWiki' type='text' class='form-control' placeholder='eg. http://en.wikipedia.org/wiki/Mount_Fuji'>
+        <div id='buttonGroup1'>
+            <button id='buttonSave' type='button' class='btn btn-primary'>Update</button>
+        </div>
+        <div id='buttonGroup2'>
+            <button id='buttonClose' type='button' class='btn btn-primary'>Close</button>
+            <button id='buttonDelete' type='button' class='btn btn-danger'>Delete</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<ProxyConfig allowedReferers='https://maps.esri.com/rc/quiz' mustMatch='true'>
+    <serverUrls>
+        <serverUrl url='https://services.arcgis.com/6DIQcwlPy8knb6sg/arcgis/rest/services/MapQuizJS_Question/FeatureServer/0' matchAll='true' clientId='' clientSecret=''/>
+        <serverUrl url='https://services.arcgis.com/6DIQcwlPy8knb6sg/arcgis/rest/services/MapQuizJS_Scoring/FeatureServer/0' matchAll='true' clientId='' clientSecret=''/>
+        <serverUrl url='https://en.wikipedia.org/w/api.php' matchAll='true'/>
+    </serverUrls>
+</ProxyConfig>
